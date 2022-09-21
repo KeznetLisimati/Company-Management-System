@@ -1,0 +1,45 @@
+<ul class="nav nav-tabs">
+    <li class="active"><a href="#overview" data-toggle="tab">Overview</a></li>
+    <li class=""><a href="#contact" data-toggle="tab">Contact Details</a></li>
+    <li class=""><a href="#qualifications" data-toggle="tab">Qualifications</a></li>
+    <li class=""><a href="#bank-detail" data-toggle="tab">Bank Details</a></li>
+    <li class=""><a href="#leave" data-toggle="tab">Leave Details</a></li>
+    <li class=""><a href="#benefits" data-toggle="tab">Benefits Details</a></li>
+    <li class=""><a href="#relations" data-toggle="tab">Relations Details</a></li>
+    <li class=""><a href="#operations" data-toggle="tab">Operations</a></li>
+</ul>
+
+<!-- Tab panes -->
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="overview">
+        <br/>
+        <%@include file="employeeOverview.jspf" %>
+    </div>
+    <div class="tab-pane fade" id="contact">
+        <br/>
+        <%@include file="contactList.jspf" %>
+    </div>
+    <div class="tab-pane fade" id="qualifications">
+        <br/>
+        <%@include file="qualificationList.jsp" %>
+    </div>
+    <div class="tab-pane fade" id="bank-detail">
+        <br/>
+        <%@include file="bankDetailList.jspf" %>
+    </div>
+    <div class="tab-pane fade" id="leave">
+        <br/>
+        <%@include file="leaveList.jspf" %>
+    </div>
+    <div class="tab-pane fade" id="benefits">
+        <br/>
+        <%@include file="benefitList.jspf" %>
+    </div>
+    <div class="tab-pane fade" id="relations">
+        <br/>
+        <%@include file="relationList.jspf" %>
+    </div>
+    <div class="tab-pane fade" id="operations">
+        <%@include file="operation.jspf" %>
+    </div>
+</div>

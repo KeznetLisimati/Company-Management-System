@@ -1,0 +1,29 @@
+<b class="titleHeader">Contact Details</b>  | <a href="${page}/company/contact/item.form?companyId=${company.companyId}">Add Contact Details</a>
+<hr/>
+<table id="tableList" class="display" cellspacing="0">
+    <thead>
+    <th>Contact Type</th>
+    <th>Contact Details</th>
+    <th>Contact Status </th>
+    <th>&nbsp</th>
+</thead>
+<tfoot>
+<th>Contact Type</th>
+<th>Contact Details</th>
+<th>Contact Status </th>
+<th>&nbsp</th>
+</tfoot>
+<tbody>
+<c:forEach var="contact" items="${companyContacts}" >
+    <tr>
+        <td><a href="<c:url value="/companyContact/dashboard/profile.htm?id=${contact.companyContactId}"/>">${contact.contactType}</a></td>
+        <td>${contact.contactDetail}</td>
+        <td>${contact.preferred}</td>
+        <td>
+            <a href="<c:url value="/companyContact/item.form?id=${companyContact.companyContactId}"/>"class="btn btn-default btn-sm"><span style="color:green"> Edit </span></a> | 
+            <a id="deletecontact" href="${page}/company/contact/item.delete?id=${contact.companyContactId}"><span style="color:red"class="btn btn-default btn-sm">Delete</span></a>
+        </td>
+    </tr>
+</c:forEach>
+</tbody>
+</table>

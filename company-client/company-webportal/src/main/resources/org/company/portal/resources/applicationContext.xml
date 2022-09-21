@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/data/jpa
+    http://www.springframework.org/schema/data/jpa/spring-jpa.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+    
+    <mvc:default-servlet-handler/>
+        
+    <jpa:repositories base-package="org.company.business.repo"/>
+    <mvc:annotation-driven conversion-service="conversionService"/>
+    <bean class="org.springframework.format.support.FormattingConversionServiceFactoryBean" id="conversionService">
+        <property name="converters">
+            <set>
+                
+                <bean class="org.company.portal.web.converter.DistrictConverter"/>          
+                <bean class="org.company.portal.web.converter.UserRoleConverter"/>
+                <bean class="org.company.portal.web.converter.StationConverter"/>
+                <bean class="org.company.portal.web.converter.AccountTypeConverter"/>
+                <bean class="org.company.portal.web.converter.ContactTypeConverter"/>
+                <bean class="org.company.portal.web.converter.StationCategoryConverter"/>
+                <bean class="org.company.portal.web.converter.UserConverter"/>
+                <bean class="org.company.portal.web.converter.UserLevelConverter"/>
+                <bean class="org.company.portal.web.converter.DateConverter"/>
+            </set>
+        </property>
+    </bean> 
+</beans>

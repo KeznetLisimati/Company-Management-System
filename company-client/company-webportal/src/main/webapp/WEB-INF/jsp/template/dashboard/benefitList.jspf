@@ -1,0 +1,30 @@
+<b class="titleHeader">Benefits </b>  | <a href="../benefit/item.form?employeeId=${employee.employeeId}">Add Benefit</a><br/><br/>
+<hr/>
+<div class="row">
+    <div class="col-lg-12">
+        <table class="display itemList" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>Benefit</th>
+                    <th>Date Awarded</th>
+                    <th>Value</th>
+                    <th>&nbsp;</th>
+                </tr>
+            </thead>
+            <tbody>
+            <c:forEach var="benefit" items="${benefits}" varStatus="">
+                <tr class="gradeA">
+                    <td>${benefit.benefit}</td>
+                    <td><spring:eval expression="benefit.dateAwarded"/></td>
+                <td>$${benefit.value}</td>
+                <td>
+                    <a href="../benefit/item.form?id=${benefit.employeeBenefitId}&employeeId=${employee.employeeId}">Edit</a> | 
+                    <a id="deletebenefit" href="../benefit/item.delete?id=${benefit.employeeBenefitId}">Delete</a>
+                </td>
+                </tr>
+            </c:forEach>
+            </tbody>
+        </table>
+
+    </div>
+</div>

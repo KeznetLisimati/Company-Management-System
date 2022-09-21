@@ -1,0 +1,25 @@
+<table class="table-condensed" id="pat-profile" width="100%" style="font-size: 1.1em;">
+    <tbody>
+        <tr>
+            <th>Name :</th>
+            <td>
+                ${company.name} 
+            </td>
+            <th>Company No.</th>
+            <td>
+                ${company.companyNo}
+            </td>
+            <td><img src="<c:url value="${company.pic}"/>"/></td>
+        </tr>
+        <tr>
+            <th>Contact Person</th>
+            <td>
+                ${company.contactPerson}   
+            </td>
+            <th>District</th>
+            <td>
+                ${company.district}
+            </td>
+        </tr>
+    </tbody>
+</table>

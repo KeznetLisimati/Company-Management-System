@@ -1,0 +1,36 @@
+<table class="table-condensed" width="100%">
+    <tr>
+        <th>Start Date</th>
+        <td>${company.startDate}</td>
+        <th> Province</th>
+        <td>${company.province}</td>
+    </tr>   
+    <tr>
+        <th>Balance</th>
+        <td>${company.balance}</td>
+        <th>Country</th>
+        <td>${company.country}</td>
+    </tr>  
+    <tr>
+        <th>Industry</th>
+        <td>${company.industry}</td>
+        <th>Contact Person</th>
+        <td>${company.contactPerson}</td>
+    </tr> 
+    <tr>
+      
+        <th>Company No</th>
+        <td>${company.companyNo}</td>
+        <th>District</th>
+        <td>${company.district}</td>
+    </tr>
+</table>
+<table style="margin-left: 80%;">                
+
+    <tr> <td>
+            <a href="${page}/company/item.form?id=${company.companyId}"> 
+                <span class="btn btn-success btn-sm" style="margin-left:120px"><b>Edit </b></span></a>
+        
+        </td>
+    </tr>
+</table>

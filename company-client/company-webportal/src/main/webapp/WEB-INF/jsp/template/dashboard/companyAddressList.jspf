@@ -1,0 +1,29 @@
+<b class="titleHeader">Address Details</b>  | <a href="${page}/company/address/item.form?companyId=${company.companyId}">Add Address Details</a>
+<hr/>
+<table id="tableList" class="display" cellspacing="0">
+    <thead>
+    <th>Address Type</th>
+    <th>Address Details</th>
+    <th>Address Status </th>
+    <th>&nbsp</th>
+</thead>
+<tfoot>
+<th>Address Type</th>
+<th>Address Details</th>
+<th>Address Status </th>
+<th>&nbsp</th>
+</tfoot>
+<tbody>
+<c:forEach var="address" items="${companyAddresss}" >
+    <tr>
+        <td><a href="<c:url value="/companyAddress/dashboard/profile.htm?id=${address.companyAddressId}"/>">${address.addressType}</a></td>
+        <td>${address.addressDetail}</td>
+        <td>${address.preferred}</td>
+        <td>
+            <a href="<c:url value="/companyAddress/item.form?id=${companyAddress.companyAddressId}"/>"class="btn btn-default btn-sm"><span style="color:green"> Edit </span></a> | 
+            <a id="deleteaddress" href="${page}/company/address/item.delete?id=${address.companyAddressId}"><span style="color:red"class="btn btn-default btn-sm">Delete</span></a>
+        </td>
+    </tr>
+</c:forEach>
+</tbody>
+</table>

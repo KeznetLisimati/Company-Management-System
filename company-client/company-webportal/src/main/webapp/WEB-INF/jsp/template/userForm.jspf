@@ -1,0 +1,54 @@
+<form:form commandName="item">
+    <%@include file="../template/formState.jspf" %>
+    <form:hidden path="userLevel"/>
+    <form:hidden path="province"/>
+    <form:hidden path="district"/>
+    <form:hidden path="station"/>
+    <div class="form-group">
+        <label>First Name</label>
+        <form:input path="firstName" class="form-control"/>
+        <p class="help-block">
+        <form:errors path="firstName"/>
+        </p>
+    </div>
+    <div class="form-group">
+        <label>Last Name</label>
+        <form:input path="lastName" class="form-control"/>
+        <p class="help-block">
+        <form:errors path="lastName" class="alert-danger"/>
+        </p>
+    </div>
+    <div class="form-group">
+        <label>User Name</label>
+        <form:input path="username" class="form-control"/>
+        <p class="help-block">
+        <form:errors path="username" class="alert-danger"/>
+        </p>
+    </div>
+    <div class="form-group">
+        <label>Password</label>
+        <form:password path="password" class="form-control"/>
+        <p class="help-block">
+        <form:errors path="password" class="alert-danger"/>
+        </p>
+    </div>
+    <div class="form-group">
+        <label>Confirm Password</label>
+        <form:password path="confirmPassword" class="form-control"/>
+        <p class="help-block">
+        <form:errors path="confirmPassword" class="alert-danger"/>
+        </p>
+    </div>
+    
+   <div class="form-group">
+        <label>User Roles</label><br/><br/>
+        <form:checkboxes path="roles" items="${roles}" itemLabel="name" itemValue="id" delimiter="<br/>"/>
+        <p class="help-block">
+        <form:errors path="roles" class="alert-danger"/>
+        </p>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-primary" type="submit">Save</button>
+        <a href="${itemDelete}"><button class="btn btn-primary" type="button">Cancel</button></a>
+    </div>
+</form:form>

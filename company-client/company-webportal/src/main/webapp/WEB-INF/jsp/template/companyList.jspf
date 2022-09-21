@@ -1,0 +1,37 @@
+<a href="${page}/admin/index.htm">Option Tables</a> | <a href="${page}/company/item.form">New Company</a> | <a href="${page}/companies.htm">Company List</a>
+<hr/>
+<table id="tableList" class="display" cellspacing="0">
+    <thead>
+    <th>Company Name</th>
+    <th>Company No.</th>
+    <th>Company Type</th>
+    <th>Industry</th>
+    <th>Country</th>>
+
+    <th>&nbsp</th>
+</thead>
+<tfoot>
+<th>Company Name</th>
+<th>Company No.</th>
+<th>Company Type</th>
+<th>Industry</th>
+<th>Country</th>>
+<th>&nbsp</th>
+</tfoot>
+<tbody>
+<c:forEach var="company" items="${items}" >
+    <tr>
+        <td><a href="<c:url value="/company/dashboard/profile.htm?id=${company.companyId}"/>">${company.name}</a></td>
+        <td>${company.companyNo}</td>
+        <td>${company.companyType}</td>
+        <td>${company.industry}</td>
+        <td>${company.country}</td>
+        <td>
+            <a href="<c:url value="/company/item.form?id=${company.companyId}"/>"class="btn btn-success btn-sm">Edit</a> | 
+
+            <a href="<c:url value="/company/dashboard/profile.htm?id=${company.companyId}"/>"class="btn btn-info btn-sm">View Detail</a>
+        </td>
+    </tr>
+</c:forEach>
+</tbody>
+</table>

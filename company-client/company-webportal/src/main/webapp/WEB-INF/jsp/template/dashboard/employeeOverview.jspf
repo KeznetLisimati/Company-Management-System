@@ -1,0 +1,61 @@
+<table class="table-condensed" width="100%">
+    <tr>
+        <th>Date of Birth</th>
+        <td><spring:eval expression="employee.birthDate"/></td>
+<th>Marital Status</th>
+<td>${employee.maritalStatus}</td>
+</tr>   
+<tr>
+    <th>Nationality</th>
+    <td>${employee.nationality}</td>
+    <th>Citizenship</th>
+    <td>${employee.citizenship}</td>
+</tr> 
+<tr>
+    <th>Employment Date</th>
+    <td><spring:eval expression="employee.initialEmploymentDate"/></td>
+<th>Station</th>
+<td>${employee.station}</td>
+</tr> 
+<tr>
+    <th>Department</th>
+    <td>${employee.department}</td>
+    <th>Post</th>
+    <td>${employee.post}</td>
+</tr> 
+<tr>
+    <th>Employment Type</th>
+    <td>${employee.employmentType}</td>
+    <th>Appointment Term</th>
+    <td>${employee.appointmentTerm}</td>
+</tr> 
+<tr>
+    <th>Employment Category</th>
+    <td>${employee.employmentCategory}</td>
+<c:choose>  
+    <c:when test="${employee.terminated}">  
+        <th>Employment Status</th>
+        <td>Terminated ${employee.terminationDate}</td>
+    </c:when>  
+    <c:otherwise>  
+        <th>Employment Status</th>
+        <td>${employee.employeeStatus}</td>
+    </c:otherwise>  
+</c:choose>
+</tr> 
+<%--<c:if test="${employee.employmentType.canRetire}">
+    <tr>               
+        <th>Years In Service</th>
+        <td> [ ${employee.yearsInService} ] </td>
+        <th>Notification</th>
+        <td><font style="color: red;">${employee.statusDueForRetirement}</font></td>
+    </tr>
+</c:if>--%>
+</table>
+<table style="margin-left: 90%;">                
+
+    <tr> <td>
+            <a href="${page}/emp/item.form?id=${employee.employeeId}">Edit</a>
+        </td>
+    </tr>
+</table>

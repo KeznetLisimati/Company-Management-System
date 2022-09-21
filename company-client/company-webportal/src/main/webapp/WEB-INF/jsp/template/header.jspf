@@ -1,0 +1,79 @@
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <c:set var="page" value="${pageContext.request.contextPath}"/>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>${pageTitle}</title>
+        <link rel="shortcut icon" href="<c:url value="/resources/images/fav.png" />">
+        <link href="<c:url value="/resources/bootstrap/css/bootstrap.min.css" /> " rel="stylesheet">
+        <link href="<c:url value="/resources/css/plugins/metisMenu/metisMenu.min.css" /> " rel="stylesheet">
+        <link href="<c:url value="/resources/css/sb-admin-2.css" /> " rel="stylesheet">        
+        <link href="<c:url value="/resources/font-awesome-4.1.0/css/font-awesome.min.css" /> " rel="stylesheet">
+        <link href="<c:url value="/resources/datatables/css/jquery.dataTables.min.css" /> " rel="stylesheet">
+        <link href="<c:url value="/resources/datatables/bootstrap/3/dataTables.bootstrap.css" /> " rel="stylesheet">
+        <link href="<c:url value="/resources/jquery-ui-1.11.4/jquery-ui.min.css" /> " rel="stylesheet">
+        <link href="<c:url value="/resources/jquery-ui-1.11.4/jquery-ui.css" /> " rel="stylesheet">
+        <style type="text/css">
+            .img-banner{
+                width:100%;
+                height: auto;
+            }
+            .navbar-brand{
+
+            }
+            .even{
+                background: #F5F5F5;
+            }
+            .odd{
+                background: #fff;
+            }
+        </style>
+        <script type="text/javascript">
+            var dateOfBirth = "<c:out value="${yearRanges.dateOfBirth}"/>";
+            var contract = "<c:out value="${yearRanges.contract}"/>";
+            var general = "<c:out value="${yearRanges.general}"/>";
+            var unlimited = "<c:out value="${yearRanges.unlimited}"/>";
+            var path = "<c:out value="${page}"/>";
+        </script>
+    </head>
+    <body>        
+        <div align="center">
+             <img class="img-banner"  style="height:120px" src=" <c:url value="/resources/images/background.jpg" />" alt="No image" />
+        </div>  
+        <div id="wrapper">
+            <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+
+                <h5 style="float:right;margin-right:10%;">
+                    <a href="${page}/admin/index.htm" style="margin-left: 35px">
+                        Home              
+                    </a> &nbsp;
+                    <a href="${page}/companies.htm" title="Manage Company" style="margin-left: 28px">
+                        Manage Companies
+                    </a>&nbsp;
+                    <a href="${page}/emp/item.form" title="New Employee" style="margin-left: 28px">
+                        Manage Employee
+                    </a>&nbsp;
+                    <a href="${page}/reports/index.htm" title= "Reports" style="margin-left: 28px">
+                        System Reports             
+                    </a>&nbsp;
+                    <sec:authorize ifAllGranted="ROLE_ADMINISTRATOR">
+                        <a href="${page}/admin/index.htm" style="margin-left: 28px">
+                            Administration
+                        </a>&nbsp;
+                    </sec:authorize>
+                    <a href="${page}" style="margin-left: 28px" >
+                        User: ${currentuser.displayName}
+                    </a>&nbsp;
+                    <a href="${page}/logout.htm" style="margin-left: 28px"/>Logout</a>&nbsp;
+                </h5>
+                <%@include file="sidebarnavigation.jspf" %>   
+            </nav>
+            <div id="page-wrapper"><br/>

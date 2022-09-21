@@ -1,0 +1,32 @@
+<div class="navbar-default sidebar" role="navigation">
+    <div class="sidebar-nav navbar-collapse">
+        <ul class="nav" id="side-menu">
+            <li>
+                <a href="${page}/employee/search/index.htm"><i class="fa fa-dashboard fa-fw"></i> Home</a>
+            </li>
+            <li>
+                <a href="${page}/emp/item.form"><i class="fa fa-table fa-fw"></i> Manage Company</a>
+            </li>
+            <li>
+                <a href="${page}/manageEmployee.htm"><i class="fa fa-edit fa-fw"></i>Manage Employee</a>
+            </li>
+            <li>
+                <a href="${page}/reports/index.htm"><i class="fa fa-edit fa-fw"></i>System Reports</a>
+            </li>            
+            <sec:authorize ifAllGranted="ROLE_ADMINISTRATOR" >
+            <li>
+                <a href="${page}/admin/index.htm"><i class="fa fa-table fa-fw"></i> Administration</a>
+            </li>
+            </sec:authorize>
+            <li>
+                
+            </li>
+            <li>
+                <a href="${page}/admin/changepassword.htm?id=${currentuser.username}"><i class="fa fa-table fa-fw"></i>Change Password</a>
+            </li>
+            <li>
+                <a href="${page}/logout.htm"><i class="fa fa-edit fa-fw"></i>${currentuser.displayName} Log Out</a>
+            </li>
+        </ul>
+    </div>
+</div>

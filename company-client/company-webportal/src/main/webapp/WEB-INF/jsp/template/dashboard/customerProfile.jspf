@@ -1,0 +1,25 @@
+<table class="table-condensed" id="emp-profile" width="100%" style="font-size: 1.1em;">
+    <tbody>
+        <tr>
+            <th>Name :</th>
+            <td>
+                ${employee.fullname} 
+            </td>
+            <th>Age</th>
+            <td>
+                ${employee.integerValueOfAge}
+            </td>
+            <td><img src="<c:url value="${employee.pic}"/>"/></td>
+        </tr>
+        <tr>
+            <th>Identifier Number</th>
+            <td>
+                ${employee.idType} - ${employee.idNumber}   
+            </td>
+            <th>EC Number</th>
+            <td>
+                ${employee.ecNumber}
+            </td>
+        </tr>
+    </tbody>
+</table>

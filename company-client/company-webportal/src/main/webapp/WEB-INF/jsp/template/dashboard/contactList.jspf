@@ -1,0 +1,30 @@
+<b class="titleHeader">Contact Detail</b>  | <a href="/company/contact/item.form?companyId=${company.companyId}">Add Contact</a>
+<hr/>
+<div class="row">
+    <div class="col-lg-12">
+        <table class="display itemList" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>Contact Type</th>
+                    <th>Contact Detail</th>
+                    <th>Status</th>
+                    <th>&nbsp;</th>
+                </tr>
+            </thead>
+            <tbody>
+            <c:forEach var="item" items="${contacts}" varStatus="">
+                <tr class="gradeA">
+                    <td>${item.contactType}</td>
+                    <td>${item.contactDetail}</td>
+                    <td>${item.preferred}</td>
+                    <td>
+                        <a href="../contact/item.form?companyId=${item.personContactId}&id=${item.personContactId}">Edit</a> | 
+                        <a id="deletecontact" href="../contact/item.delete?id=${item.personContactId}">Delete</a>
+                    </td>
+                </tr>
+            </c:forEach>
+            </tbody>
+        </table>
+
+    </div>
+</div>

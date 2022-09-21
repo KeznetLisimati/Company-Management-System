@@ -1,0 +1,4 @@
+<br/><br/>
+<div style="position: relative; padding-left: 20px; font-size: 14px; font-weight: bold;">
+    <a href="${page}/emp/approval/item.list?id=${employee.employeeId}">Leave Approval</a><br/><br/>
+</div>
